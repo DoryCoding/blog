@@ -1,0 +1,15 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}" />
+
+{% if article_list %}
+    <ul>
+	    {% for article in article_list %}
+	        <li>
+	        	<a href="">{{ article.title }}</a>
+	        </li>
+	    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
