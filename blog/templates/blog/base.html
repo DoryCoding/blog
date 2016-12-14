@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<meta charset='utf-8'>
+	<head>
+		<title>{% block title %}所有文章{% endblock %}</title>
+	</head>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/base.css' %}" />
+	<body>
+		<div class='nav'>
+			这是导航栏
+		</div>
+		<div class="content">
+			{% block content %}
+				文章正文
+			{% endblock %}
+		</div>
+
+
+
+
+		
+	</body>
+</html>
