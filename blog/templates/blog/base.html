@@ -2,17 +2,33 @@
 <html>
 	<meta charset='utf-8'>
 	<head>
-		<title>{% block title %}所有文章{% endblock %}</title>
+		<title>{% block title %}Dory的博客{% endblock %}</title>
 	</head>
 	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/base.css' %}" />
 	<body>
 		<div class='nav'>
-			这是导航栏
+			<div class='nav_header'></div>
+			<div class='nav_img'>
+				<img src="{% static 'blog/images/icon.jpg' %}" alt="" >
+			</div>
+			<div class="nav_tag">
+				<ul class='nav_tag_list'>
+					<li><a href="">所有文章</a></li>
+					<li><a href="">python</a></li>
+					<li><a href="">iOS</a></li>
+					<li><a href="">svn/git</a></li>
+					<li><a href="">随笔</a></li>
+					<li><a href="">关于我</a></li>
+				</ul>
+			</div>
+			<div class="nav_footer">
+				备案号
+			</div>
 		</div>
 		<div class="content">
 			{% block content %}
-				文章正文
+				文章正文hahah
 			{% endblock %}
 		</div>
 

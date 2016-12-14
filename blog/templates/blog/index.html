@@ -10,20 +10,23 @@
 	{% if article_list %}
 	    
 	    {% for article in article_list %}
-			<div class="article_body">
-				<div class='article_title'>
-		        	<a href="">{{ article.title }}</a>
-		        </div>
-		        <br>
-		        <div class="article_content">
-		        	{{ article.content }}
-		        </div>
-		        <br>
-		        <div class="article_footer">
-		        	{{ article.pub_date }}
-		        </div>
-		        
-			</div>
+
+	    	{% autoescape off %}
+				<div class="article_body">
+					<div class='article_title'>
+			        	<a href="{% url 'blog:detail' article.id %}">{{ article.title }}</a>
+			        </div>
+			        <br>
+			        <div class="article_content">
+			        	{{ article.content }}
+			        </div>
+			        <br>
+			        <div class="article_footer">
+			        	{{ article.pub_date }}
+			        </div>
+			        
+				</div>
+	        {% endautoescape %}
 	        
 	    {% endfor %}
 	    

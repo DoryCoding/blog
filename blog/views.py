@@ -27,3 +27,9 @@ def index(request):
 
 #     def get_queryset(self):
 #         return Question.objects.order_by('-pub_date')[:5]
+
+def detail(request,article_id):
+    article = get_object_or_404(Article,pk=article_id)
+
+    return render(request,'blog/detail.html',{'article':article})
+    

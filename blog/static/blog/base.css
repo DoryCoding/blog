@@ -1,18 +1,77 @@
 body {
     background-color: rgb(233,233,233) ;
 }
+/*设置字体，并指定在哪里可以找到他的url*/
+@font-face {
+	font-family: Yanti;/*Yanti名称可以随便写，但是要和下面的font-family名称一致*/
+	src: url('images/yanti.ttf');
+}
+
+/*------------------左侧导航栏------------------------*/
 .nav {
 	float: left;
 	position: fixed;
-	width: 20%;
+	width: 25%;
 	height: 100%;
+	background-color: gray;
+	/*background: white url("images/back.jpeg") no-repeat right bottom; */
+}
+.nav_header {
+	height: 25%;
 	background-color: red;
 }
+.nav_img {
+	width: 160px;
+	height: 160px;
+	margin: 0 auto;
+}
+.nav_img img{
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	margin-top: -75px;
+	border-radius: 75px;
+}
+.nav_tag {
+	width: 100%;
+	height: 50%;
+	/*margin: 0 auto;*/
+	margin-top: -20%;
+	background-color: red;
+}
+.nav_tag_list {
+	/*width: 100%;
+	margin: 0 auto;*/
+	display: block;
+	text-align: center;
+}
+.nav_tag_list li{
+	list-style: none;
+	text-align: center;
+	height: 20px;
+	padding: 10px;
+}
+.nav_tag_list li a {
+	text-decoration: none;
+	color: black;
+}
+.nav_tag_list li a:hover {
+	color: black;
+	font-size: 20px;
+}
+.nav_footer {
+	text-align: center;
+	color: yellow;
+}
+
+
+
+/*------------------右侧文本栏------------------------*/
 .content {
 	float: left;
 	position: absolute;
-	width: 80%;
-	margin-left: 20%;
+	width: 75%;
+	margin-left: 25%;
 	/*background-color: green;*/
 }
 .article_body {
@@ -31,11 +90,59 @@ body {
 	line-height: 50px;
 	font-size: 25px;
 	margin-left: 20px;
+	color: black;
 }
-
+.article_title a:hover {
+	color: green;
+}
 .article_content {
 	color: gray;
+	max-height: 80px;
+	overflow: hidden;
+	/*text-overflow: ellipsis;*/
 }
 .article_footer {
+	border-top: 1px black dashed;
+	padding-top: 15px;
+	/*margin-top: 5px;*/
+	color: gray;
+	font-size: 12px;
+}
+
+
+
+/*-------------详情页----------------------*/
+.content_detail_title {
+	text-align: center;
+}
+.content_detail_pub-date {
+	text-align: center;
 	color: gray;
 }
+.last_article {
+	float: left;
+}
+
+.next_article {
+	float: right;
+}
+.article_body a {
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

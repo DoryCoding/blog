@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/base.css' %}" />
+
+{% block content %}
+
+	{% autoescape off %}
+		<div class='article_body'>
+			<div>
+				<h1 class='content_detail_title'>
+					{{ article.title }}
+				</h1>
+				<h6 class='content_detail_pub-date'>
+					{{ article.pub_date }}
+				</h6>
+			</div>
+			<hr>
+			<div class="content_detail_content">
+				{{ article.content }}
+			</div>
+		</div>
+
+		<div class="article_body">
+			<div class='last_article'>
+				<a href="">
+					上一篇
+				</a>
+			</div>
+			<div class='next_article'>
+				<a href="">
+					上一篇
+				</a>
+			</div>
+		</div>
+	{% endautoescape %} 	
+
+{% endblock %}
