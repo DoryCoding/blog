@@ -6,9 +6,11 @@
 	</head>
 	{% load static %}
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/base.css' %}" />
+	<link rel="icon" href="{% static 'blog/images/blog.png' %}"/>
 	<body>
 		<div class='nav'>
-			<div class='nav_header'></div>
+			<!-- 方案一 -->
+			<!-- <div class='nav_header'></div>
 			<div class='nav_img'>
 				<img src="{% static 'blog/images/icon.jpg' %}" alt="" >
 			</div>
@@ -23,10 +25,38 @@
 				</ul>
 			</div>
 			<div class="nav_footer">
-				备案号
+				<a href="http://www.miitbeian.gov.cn/" target='_blank'>京ICP备16064841号</a>
+			</div> -->
+
+			<!-- 方案二 -->
+			<div class="nav_introduce">
+				<div class="nav_introduce_none"></div>
+				<div class="nav_introduce_header">
+					<a href="">Dory</a>
+				</div>
+				<div class="nav_introduce_content">
+					分享、沟通
+				</div>
+			</div>
+			<div class="nav_footer">
+				<a href="http://www.miitbeian.gov.cn/" target='_blank'>京ICP备16064841号</a>
 			</div>
 		</div>
 		<div class="content">
+			<!-- 方案二 -->
+
+			<div class='content_nav'>
+				<ul>
+					<li><a href="" id='content_active'>所有文章</a></li>
+					<li><a href="">python</a></li>
+					<li><a href="">iOS</a></li>
+					<li><a href="">svn/git</a></li>
+					<li><a href="">随笔</a></li>
+				</ul>
+			</div>
+			<br>
+			<br>
+			<br>
 			{% block content %}
 				文章正文hahah
 			{% endblock %}
