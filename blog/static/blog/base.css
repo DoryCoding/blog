@@ -167,7 +167,7 @@ body {
 	margin: 0 auto;
 	background-color: white;
 	margin-top:10px; 
-	padding: 10px;
+	padding: 10px 10px 0px 10px;
 }
 .article_title {
 	border-left: 5px black solid;
@@ -187,45 +187,62 @@ body {
 	color: gray;
 	max-height: 80px;
 	overflow: hidden;
-	/*text-overflow: ellipsis;*/
 }
 .article_footer {
 	border-top: 1px black dashed;
-	padding-top: 15px;
-	/*margin-top: 5px;*/
+	padding: 10px;
+	height: 20px;
 	color: gray;
 	font-size: 12px;
+	
 }
-
+.article_footer_div {
+	float: left;
+}
+.article_footer_div img{
+	width: 20px;
+	height: 20px;
+	vertical-align:middle;
+}
+.article_footer_div_tag {
+	margin-left: 20px;
+}
 
 
 /*-------------详情页----------------------*/
-.content_detail_title {
+.detail_body {
+	width: 90%;
+	margin: 0 auto;
+	background-color: white;
+	margin-top:10px; 
+	padding: 10px 20px;
+}
+.detail_article_title {
 	text-align: center;
 }
-.content_detail_pub-date {
+.detail_article_pub-date {
 	text-align: center;
 	color: gray;
 }
-.article_nav {
+.detail_article_nav {
 	width: 90%;
 	height: 20px;
 	margin: 0 auto;
 	margin-top: 20px;
 	background-color: rgb(233,233,233);
 }
-.last_article {
+.detail_article_last_article {
 	float: left;
 }
 
-.next_article {
+.detail_article_next_article {
 	float: right;
 }
-.article_nav a {
+.detail_article_nav a {
 
 	text-decoration: none;
 }
-.article_nav a img {
+.detail_article_nav a img {
 
 	width: 20px;
 	height: 20px;

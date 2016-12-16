@@ -22,7 +22,18 @@
 			        </div>
 			        <br>
 			        <div class="article_footer">
-			        	{{ article.pub_date }}
+			        	<div class="article_footer_div">
+			        		<img src="{% static 'blog/images/time.png' %}" alt="">
+			        		&nbsp;{{ article.pub_date }}
+			        	</div>
+			        	<div class="article_footer_div article_footer_div_tag">
+			        		<img src="{% static 'blog/images/tag.png' %}" alt="">
+			        		&nbsp;{{ article.article_tag }}
+			        	</div>
+			        	<div class="article_footer_div article_footer_div_tag">
+			        		<img src="{% static 'blog/images/good-selected.png' %}" alt="">
+			        		&nbsp;100
+			        	</div>
 			        </div>
 			        
 				</div>
