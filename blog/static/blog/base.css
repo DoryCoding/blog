@@ -207,7 +207,10 @@ body {
 .article_footer_div_tag {
 	margin-left: 20px;
 }
-
+.article_footer_div_good {
+	text-decoration: none;
+	color: gray;
+}
 
 /*-------------详情页----------------------*/
 .detail_body {

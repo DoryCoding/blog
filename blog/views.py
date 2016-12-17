@@ -10,12 +10,11 @@ from django.template import loader
 
 # Create your views here.
 def index(request):
-    article_list = Article.objects.order_by('-pub_date')
-    # print article_list
+    print 'index'
+    article_list = Article.objects.order_by('-pub_date').filter(publish=True)
     articles = {
         'article_list':article_list,
     }
-    # print articles
     return render(request,'blog/index.html',articles)
     # template = loader.get_template('blog/index.html')
     # return HttpResponse(template.render(articles,request))
@@ -28,7 +27,24 @@ def index(request):
 #     def get_queryset(self):
 #         return Question.objects.order_by('-pub_date')[:5]
 
+def articleByTag(request,tag):
+    print tag
+    article_list_tag = Article.objects.order_by('-pub_date').filter(publish=True,article_tag="python")
+    articles = {
+        'article_list':article_list_tag,
+    }
+    return render(request,'blog/index.html',articles)
+ 
+# 关于我页面
+def about(request):
+    print '34567890'
+    return render(request,'blog/about.html')
+
+
+
 def detail(request,article_id):
+    print '11111111'
+    # print article_tag
     article = get_object_or_404(Article,pk=article_id)
 
     return render(request,'blog/detail.html',{'article':article})

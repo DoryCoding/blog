@@ -11,7 +11,23 @@
 	    
 	    {% for article in article_list %}
 
+			<div class='content_nav'>
+				<ul>
+					<li><a href="" id='content_active'>所有文章</a></li>
+					<li><a href="{% url 'blog:articleByTag' article.article_tag %}">python</a></li>
+					<li><a href="{% url 'blog:articleByTag' article.article_tag %}">iOS</a></li>
+					<li><a href="{% url 'blog:articleByTag' article.article_tag %}">svn/git</a></li>
+					<li><a href="{% url 'blog:articleByTag' article.article_tag %}">随笔</a></li>
+					<li><a href="about.html">关于我</a></li>
+				</ul>
+			</div>
+			<br>
+			<br>
+			<br>
+
+
 	    	{% autoescape off %}
+
 				<div class="article_body">
 					<div class='article_title'>
 			        	<a href="{% url 'blog:detail' article.id %}">{{ article.title }}</a>
@@ -31,8 +47,11 @@
 			        		&nbsp;{{ article.article_tag }}
 			        	</div>
 			        	<div class="article_footer_div article_footer_div_tag">
-			        		<img src="{% static 'blog/images/good-selected.png' %}" alt="">
-			        		&nbsp;100
+			        		<a href="" class='article_footer_div_good'>
+			        			<img src="{% static 'blog/images/good-selected.png' %}" alt="">
+			        			&nbsp;{{ article.star }}
+			        		</a>
+			        		
 			        	</div>
 			        </div>
 			        

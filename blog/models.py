@@ -9,11 +9,11 @@ from django.utils import timezone
 
 # Create your models here.
 ARTICLE_TAG = (
-    ('iOS','iOS'),
-    ('Python','Python'),
-    ('Git-SVN','git or svn'),
-    ('JS','javascript'),
-    ('Essay','essay'),
+    ('iOS','i'),
+    ('python','p'),
+    ('git/svn','g'),
+    ('javascript','j'),
+    ('essay','e'),
     )
 
 @python_2_unicode_compatible
@@ -28,6 +28,8 @@ class Article(models.Model):
     article_tag = models.CharField(max_length=10,choices=ARTICLE_TAG)
     # 文章点赞数
     star = models.IntegerField(default=0)
+    # 隐藏或发表
+    publish = models.BooleanField(default=True)
 
     def __str__(self):
         return u'%s %s' % (self.title,self.content)
