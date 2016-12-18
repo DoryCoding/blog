@@ -1,11 +1,49 @@
 {% extends 'blog/base.html' %}
 
-{% load static %}
+<!-- {% load static %} -->
 
-<link rel="stylesheet" type="text/css" href="{% static 'blog/base.css' %}" />
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'blog/base.css' %}" /> -->
 
 {% block content %}
-
-<h1>这是关于我的页面</h1>
-
+<div class="article_body about">
+	<div class=''>
+		<div class="about_left">
+			<img src="{% static 'blog/images/icon.jpg' %}" alt="">
+		</div>
+		<div class="about_right">
+			<h3>dory</h3>
+			<p>码畜</p>
+			<p>github：&nbsp;<a href='http://github.com/dorycoding' target='_blank' class='about_github'>github.com/dorycoding</a></p>
+			<p>邮&nbsp;&nbsp;&nbsp;&nbsp;箱：&nbsp;daolizou@163.com</p>
+			<p class='about_ad'>广告位招租、征婚、重金求子。</p>
+		</div>
+	</div>
+	<div class='about_clear'></div>
+	<hr>
+	<div class='about_python'>
+		<div class="">
+			<h2>The Zen of Python, by Tim Peters</h3>
+			<p>Beautiful is better than ugly.</p>
+			<p>Explicit is better than implicit.</p>
+			<p>Simple is better than complex.</p>
+			<p>Complex is better than complicated.</p>
+			<p>Flat is better than nested.</p>
+			<p>Sparse is better than dense.</p>
+			<p>Readability counts.</p>
+			<p>Special cases aren't special enough to break the rules.</p>
+			<p>Although practicality beats purity.</p>
+			<p>Errors should never pass silently.</p>
+			<p>Unless explicitly silenced.</p>
+			<p>In the face of ambiguity, refuse the temptation to guess.</p>
+			<p>There should be one-- and preferably only one --obvious way to do it.</p>
+			<p>Although that way may not be obvious at first unless you're Dutch.</p>
+			<p>Now is better than never.</p>
+			<p>Although never is often better than *right* now.</p>
+			<p>If the implementation is hard to explain, it's a bad idea.</p>
+			<p>If the implementation is easy to explain, it may be a good idea.</p>
+			<p>Namespaces are one honking great idea -- let's do more of those!</p>
+		</div>
+	</div>
+	<br>
+</div>
 {% endblock %}

@@ -45,19 +45,32 @@
 		<div class="content">
 			<!-- 方案二 -->
 
-			<!-- <div class='content_nav'>
+			<div class='content_nav'>
 				<ul>
-					<li><a href="" id='content_active'>所有文章</a></li>
-					<li><a href="">python</a></li>
-					<li><a href="">iOS</a></li>
-					<li><a href="">svn/git</a></li>
-					<li><a href="">随笔</a></li>
-					<li><a href="">关于我</a></li>
+					<li>
+						<a href="{% url 'blog:index' %}" >所有文章</a>
+						<!--id='content_active'-->
+					</li>
+					<li>
+						<a href="{% url 'blog:articleByTag' tag='python' %}">python</a>
+					</li>
+					<li>
+						<a href="{% url 'blog:articleByTag' tag='iOS' %}">iOS</a>
+					</li>
+					<li>
+						<a href="{% url 'blog:articleByTag' tag='git' %}">svn/git</a>
+					</li>
+					<li>
+						<a href="{% url 'blog:articleByTag' tag='essay' %}">随笔</a>
+					</li>
+					<li>
+						<a href="{% url 'blog:about' tag='about' %}">关于我</a>
+					</li>
 				</ul>
 			</div>
 			<br>
 			<br>
-			<br> -->
+			<br>
 			{% block content %}
 				文章正文
 			{% endblock %}

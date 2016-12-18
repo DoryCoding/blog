@@ -11,7 +11,7 @@
 	    
 	    {% for article in article_list %}
 
-			<div class='content_nav'>
+			<!-- <div class='content_nav'>
 				<ul>
 					<li><a href="" id='content_active'>所有文章</a></li>
 					<li><a href="{% url 'blog:articleByTag' article.article_tag %}">python</a></li>
@@ -23,7 +23,7 @@
 			</div>
 			<br>
 			<br>
-			<br>
+			<br> -->
 
 
 	    	{% autoescape off %}
@@ -61,7 +61,10 @@
 	    {% endfor %}
 	    
 	{% else %}
-	    <p>没有相关文章</p>
+		<div class="article_body">
+		    <p>抱歉还没有相关文章，请浏览其他标签!</p>
+		    <br>
+		</div>
 	{% endif %}
 
 

@@ -10,7 +10,7 @@ from django.template import loader
 
 # Create your views here.
 def index(request):
-    print 'index'
+    # print 'index'
     article_list = Article.objects.order_by('-pub_date').filter(publish=True)
     articles = {
         'article_list':article_list,
@@ -28,23 +28,26 @@ def index(request):
 #         return Question.objects.order_by('-pub_date')[:5]
 
 def articleByTag(request,tag):
-    print tag
-    article_list_tag = Article.objects.order_by('-pub_date').filter(publish=True,article_tag="python")
+    # print tag
+    article_list_tag = Article.objects.order_by('-pub_date').filter(publish=True,article_tag=tag)
     articles = {
         'article_list':article_list_tag,
     }
     return render(request,'blog/index.html',articles)
  
 # 关于我页面
-def about(request):
-    print '34567890'
+def about(request,tag):
+    # print 'about'
     return render(request,'blog/about.html')
 
-
+def star(request,article_id):
+    article = get_object_or_404(Article,pk=article_id)
+    article.star += 1
+    article.save()
+    return HttpResponseRedirect(reverse('blog:detail',args=(article_id,)))
+    
 
 def detail(request,article_id):
-    print '11111111'
-    # print article_tag
     article = get_object_or_404(Article,pk=article_id)
 
     return render(request,'blog/detail.html',{'article':article})

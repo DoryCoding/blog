@@ -21,6 +21,16 @@
 				{{ article.content }}
 			</div>
 		</div>
+		
+		<br>
+		<div class="detail_article_star">
+			<div>
+				<p>{{ article.star }}</p>
+				<a href="{% url 'blog:star' article.id %}">
+					<img src="{% static 'blog/images/good-selected.png' %}" alt="">
+				</a>
+			</div>
+		</div>
 
 		<div class="detail_article_nav">
 			<div class='detail_article_last_article'>
