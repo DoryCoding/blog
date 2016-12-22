@@ -312,7 +312,22 @@ body {
 
 
 
-
+/*------------------数据分页-------------------------------*/
+.articles_pagination {
+	text-align: center;
+	width: 10%;
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	/*background-color: red;*/
+}
+.articles_pagination a {
+	text-decoration: none;
+	border: 6px green solid;
+	border-radius: 14px;
+	background-color: green;
+	color: white;
+}
 
 
 

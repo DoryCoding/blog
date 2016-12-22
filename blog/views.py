@@ -8,14 +8,24 @@ from django.views import generic
 
 from django.template import loader
 
+from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+
+
 # Create your views here.
 def index(request):
     # print 'index'
     article_list = Article.objects.order_by('-pub_date').filter(publish=True)
-    articles = {
-        'article_list':article_list,
-    }
-    return render(request,'blog/index.html',articles)
+    # 分页
+    paginator = Paginator(article_list,5)
+    page = request.GET.get('page')
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage :
+        articles = paginator.page(paginator.num_pages)
+
+    return render(request,'blog/index.html',{'articles':articles})
     # template = loader.get_template('blog/index.html')
     # return HttpResponse(template.render(articles,request))
 
@@ -30,10 +40,16 @@ def index(request):
 def articleByTag(request,tag):
     # print tag
     article_list_tag = Article.objects.order_by('-pub_date').filter(publish=True,article_tag=tag)
-    articles = {
-        'article_list':article_list_tag,
-    }
-    return render(request,'blog/index.html',articles)
+    # 分页
+    paginator = Paginator(article_list_tag,5)
+    page = request.GET.get('page')
+    try:
+        articles = paginator.page(page)
+    except PageNotAnInteger:
+        articles = paginator.page(1)
+    except EmptyPage :
+        articles = paginator.page(paginator.num_pages)
+    return render(request,'blog/index.html',{'articles':articles})
  
 # 关于我页面
 def about(request,tag):
